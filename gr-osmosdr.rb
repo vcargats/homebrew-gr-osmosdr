@@ -2,11 +2,13 @@ require "formula"
 
 class GrOsmosdr < Formula
   homepage "http://sdr.osmocom.org/trac/wiki/GrOsmoSDR"
-  url "http://cgit.osmocom.org/gr-osmosdr/snapshot/gr-osmosdr-0.1.4.tar.gz"
-  sha256 "59bb389431f72545f3ac51b87ceb98f3ba0591a1941f456ac4e67efb2ddb648c"
+  url "https://git.osmocom.org/gr-osmosdr",
+      tag:      "v0.2.4",
+      revision: "82d6b6db78c829ddf7511826bd2b64be2bc189d5"
 
   depends_on "cmake" => :build
   depends_on "python"
+  depends_on "pybind11"
   build.without? "python-deps"
   depends_on "gnuradio"
 

@@ -2,7 +2,7 @@ require "formula"
 
 class GrOsmosdr < Formula
   homepage "http://sdr.osmocom.org/trac/wiki/GrOsmoSDR"
-  url "https://git.osmocom.org/gr-osmosdr",
+  url "https://gitea.osmocom.org/sdr/gr-osmosdr.git",
       tag:      "v0.2.4",
       revision: "82d6b6db78c829ddf7511826bd2b64be2bc189d5"
 
@@ -39,7 +39,7 @@ class GrOsmosdr < Formula
       end
       args << "-DPYTHON_PACKAGES_PATH='#{lib}/#{which_python}/site-packages'"
 
-      system "cmake", *args
+      system "cmake", *args, ".."
       system "make", "install"
     end
   end

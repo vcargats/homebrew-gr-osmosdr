@@ -39,7 +39,7 @@ class GrOsmosdr < Formula
       end
       args << "-DPYTHON_PACKAGES_PATH='#{lib}/#{which_python}/site-packages'"
 
-      system "cmake", *args, ".."
+      system "cmake", *args
       system "make", "install"
     end
   end
